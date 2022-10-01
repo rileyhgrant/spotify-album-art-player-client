@@ -2,6 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "main": "index.js",
+  "private": false,
+  "homepage": "https://rileyhgrant.github.io/spotify-album-art-player-client",
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -26,7 +28,6 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://rileyhgrant.github.io/spotify-album-art-player-client/",
   "eslintConfig": {
     "extends": [
       "react-app",
