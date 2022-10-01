@@ -5,9 +5,10 @@ export default function useAuth(code) {
   const [accessToken, setAccessToken] = useState();
 
   useEffect(() => {
-    console.log("running useAuth useEffect with code:", code)
+    console.log("running useAuth useEffect with code:", code);
     axios
-      .post("http://localhost:8000/login", {
+      // .post("http://localhost:8000/login", {
+      .post("https://server-album-art-web-player.herokuapp.com/login", {
         code,
       })
       .then((res) => {
