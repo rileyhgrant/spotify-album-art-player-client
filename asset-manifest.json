@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spotify-album-art-player-client/static/css/main.89eebce7.css",
-    "main.js": "/spotify-album-art-player-client/static/js/main.2cecdcbc.js",
+    "main.js": "/spotify-album-art-player-client/static/js/main.588a92f8.js",
     "static/js/787.c4e7f8f9.chunk.js": "/spotify-album-art-player-client/static/js/787.c4e7f8f9.chunk.js",
     "index.html": "/spotify-album-art-player-client/index.html",
     "main.89eebce7.css.map": "/spotify-album-art-player-client/static/css/main.89eebce7.css.map",
-    "main.2cecdcbc.js.map": "/spotify-album-art-player-client/static/js/main.2cecdcbc.js.map",
+    "main.588a92f8.js.map": "/spotify-album-art-player-client/static/js/main.588a92f8.js.map",
     "787.c4e7f8f9.chunk.js.map": "/spotify-album-art-player-client/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89eebce7.css",
-    "static/js/main.2cecdcbc.js"
+    "static/js/main.588a92f8.js"
   ]
 }
