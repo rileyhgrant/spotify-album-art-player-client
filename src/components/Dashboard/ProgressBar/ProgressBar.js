@@ -22,7 +22,7 @@ const ProgressBar = ({ percentDone }) => {
   return (
     <span className="progress-bar-container">
       <div className="base-bar">
-        <div className="progress-bar" style={{ "width": `${percentDone}%`, "transition-duration": `${transitionTiming}s` }}>
+        <div className="progress-bar" style={{ "width": `${percentDone}%`, "transitionDuration": `${transitionTiming}s` }}>
           {/* <span className="label">{`${percentDone}%`}</span> */}
           {/* <span className="label">{`${transitionTiming}s`}</span> */}
         </div>

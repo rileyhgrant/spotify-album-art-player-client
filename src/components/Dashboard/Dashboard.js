@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../scripts/useAuth";
-import { CLIENT_ID } from "../../scripts/spotify";
+import { config } from "../../scripts/config"
 import SpotifyWebApi from "spotify-web-api-node";
 import "../../App.css";
 import "./Dashboard.css";
@@ -9,7 +9,7 @@ import ProgressBar from "./ProgressBar/ProgressBar";
 
 import { FastAverageColor } from "fast-average-color";
 
-const spotifyApi = new SpotifyWebApi({ clientId: CLIENT_ID });
+const spotifyApi = new SpotifyWebApi({ clientId: config.CLIENT_ID });
 
 // helper to assist in printing timestamp
 const stms = (seconds) => {
@@ -79,9 +79,9 @@ const Dashboard = ({ code }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#ffffff"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <polygon points="19 20 9 12 19 4 19 20"></polygon>
       <line x1="5" y1="19" x2="5" y2="5"></line>
@@ -95,9 +95,9 @@ const Dashboard = ({ code }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#ffffff"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <polygon points="5 4 15 12 5 20 5 4"></polygon>
       <line x1="19" y1="5" x2="19" y2="19"></line>

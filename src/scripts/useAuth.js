@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { config } from "../scripts/config";
 
 export default function useAuth(code) {
   const [accessToken, setAccessToken] = useState();
@@ -8,7 +9,8 @@ export default function useAuth(code) {
     console.log("running useAuth useEffect with code:", code);
     axios
       // .post("http://localhost:8000/login", {
-      .post("https://server-album-art-web-player.herokuapp.com/login", {
+      // .post("https://server-album-art-web-player.herokuapp.com/login", {
+      .post(config.SERVER_URL, {
         code,
       })
       .then((res) => {
