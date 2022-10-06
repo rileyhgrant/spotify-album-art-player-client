@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../scripts/useAuth";
-import { config } from "../../scripts/config"
+import { config } from "../../scripts/config";
 import SpotifyWebApi from "spotify-web-api-node";
 import "../../App.css";
 import "./Dashboard.css";
@@ -261,7 +261,7 @@ const Dashboard = ({ code }) => {
       .then((color) => {
         console.log(color);
         // TODO:(rgrant) this is a real arbitrary amount of dimming
-        setComplimentaryAlbumColor(`${color.hex}48`);
+        setComplimentaryAlbumColor(`${color.hex}`);
       });
 
     // stuff for calculating top-left info
@@ -369,72 +369,53 @@ const Dashboard = ({ code }) => {
   }, [accessToken, pollFrequency]);
 
   return (
-    <div
-      className="dashboard-container"
-      style={{ backgroundColor: complimentaryAlbumColor }}
-    >
-      <div className="left-column">
-        <div className="context-info">
-          <div className="sub-primary-text">{topLeftInfo.upper}</div>
-          <div className="secondary-text">{topLeftInfo.lower}</div>
-        </div>
-      </div>
-
-      <div className="center-column">
-        <div className="essential-album-info">
-          <div className="album-art">
-            <img
-              id="spotify-album-art"
-              crossOrigin="anonymous"
-              src={curr.art_url}
-              alt={curr.album}
-              width="520px"
-              height="520px"
-            />
-          </div>
-
-          <div className="album-text-info">
-            <h2>{curr.track_title}</h2>
-            <h5>{`${curr.artists}`}</h5>
-          </div>
-        </div>
-        <div className="extraneous-info">
-          <div onClick={() => newTrack("prev")}>{prevSVG} </div>
-          <div onClick={() => playPause()}>{buttonSvg}</div>
-          <div className="track-length-text">{`${stms(curr.track_pos)}`}</div>
-          <ProgressBar
-            percentDone={((curr.track_pos / curr.track_len) * 100).toFixed(3)}
-          />
-          <div className="track-length-text">{`${stms(curr.track_len)}`}</div>
-          <div onClick={() => newTrack("next")}> {nextSVG}</div>
-          {/* <div className="scrubber"> */}
-            {/* <h5> */}
-            {/* <div onClick={() => newTrack("prev")}>{prevSVG} </div> */}
-            {/* <div onClick={() => playPause()}>{buttonSvg}</div> */}
-            {/* <div>
-              <ProgressBar
-                percentDone={((curr.track_pos / curr.track_len) * 100).toFixed(
-                  3
-                )}
-              />
-            </div> */}
-            {/* </h5> */}
-            {/* <h5>
-              <b onClick={() => newTrack("prev")}>{prevSVG} </b>
-              <b onClick={() => playPause()}>{buttonSvg}</b>
-              <b onClick={() => newTrack("next")}> {nextSVG}</b>
-              {" | "}{" "}
-              <>{`${stms(curr.track_pos)} of ${stms(curr.track_len)}`}</>
-            </h5> */}
-          {/* </div> */}
-        </div>
-      </div>
-
+    <div className="dashboard-top-container">
       <div
-        className="right-column"
-        // style={{ backgroundColor: complimentaryAlbumColor }}
+        className="dashboard-container"
+        // style={{ backgroundColor: `${complimentaryAlbumColor}48` }}
+        style={{
+          backgroundImage: `linear-gradient(${complimentaryAlbumColor}33, ${complimentaryAlbumColor}99)`,
+        }}
       >
-        {/* <div>Test</div> */}
+        <div className="left-column">
+          <div className="context-info">
+            <div className="sub-primary-text">{topLeftInfo.upper}</div>
+            <div className="secondary-text">{topLeftInfo.lower}</div>
+          </div>
+        </div>
+
+        <div className="center-column">
+          <div className="essential-album-info">
+            <div className="album-art">
+              <img
+                id="spotify-album-art"
+                crossOrigin="anonymous"
+                src={curr.art_url}
+                alt={curr.album}
+                width="50%"
+                height="50%"
+              />
+            </div>
+
+            <div className="album-text-info">
+              <div className="primary-text">{curr.track_title}</div>
+              <div className="secondary-text">{`${curr.artists}`}</div>
+            </div>
+          </div>
+
+          <div className="extraneous-info">
+            <div onClick={() => newTrack("prev")}>{prevSVG} </div>
+            <div onClick={() => playPause()}>{buttonSvg}</div>
+            <div className="track-length-text">{`${stms(curr.track_pos)}`}</div>
+            <ProgressBar
+              percentDone={((curr.track_pos / curr.track_len) * 100).toFixed(3)}
+            />
+            <div className="track-length-text">{`${stms(curr.track_len)}`}</div>
+            <div onClick={() => newTrack("next")}> {nextSVG}</div>
+          </div>
+        </div>
+
+        <div className="right-column"></div>
       </div>
     </div>
   );
