@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/spotify-album-art-player-client/static/css/main.89eebce7.css",
-    "main.js": "/spotify-album-art-player-client/static/js/main.f1d09306.js",
+    "main.css": "/spotify-album-art-player-client/static/css/main.fed38284.css",
+    "main.js": "/spotify-album-art-player-client/static/js/main.c72f2469.js",
     "static/js/787.c4e7f8f9.chunk.js": "/spotify-album-art-player-client/static/js/787.c4e7f8f9.chunk.js",
     "index.html": "/spotify-album-art-player-client/index.html",
-    "main.89eebce7.css.map": "/spotify-album-art-player-client/static/css/main.89eebce7.css.map",
-    "main.f1d09306.js.map": "/spotify-album-art-player-client/static/js/main.f1d09306.js.map",
+    "main.fed38284.css.map": "/spotify-album-art-player-client/static/css/main.fed38284.css.map",
+    "main.c72f2469.js.map": "/spotify-album-art-player-client/static/js/main.c72f2469.js.map",
     "787.c4e7f8f9.chunk.js.map": "/spotify-album-art-player-client/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89eebce7.css",
-    "static/js/main.f1d09306.js"
+    "static/css/main.fed38284.css",
+    "static/js/main.c72f2469.js"
   ]
 }
