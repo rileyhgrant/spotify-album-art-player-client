@@ -18,6 +18,7 @@ export default function useAuth(code) {
         window.history.pushState({}, null, "/");
       })
       .catch((err) => {
+        console.log("caught error in this branch!");
         console.log(err);
         // TODO:(rgrant) have some hook that if this fails, set a message back to app
         // window.location = '/'

@@ -7,7 +7,6 @@ export const config = {
     ? "https://rileyhgrant.github.io/spotify-album-art-player-client/"
     : "http://localhost:3000",
   SERVER_URL: isProd
-    // ? "https://server-album-art-web-player.herokuapp.com/login"
     ? "https://spotify-album-art-player-server.onrender.com/login"
     : "http://localhost:8000/login",
 };
