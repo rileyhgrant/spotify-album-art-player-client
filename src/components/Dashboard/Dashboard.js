@@ -115,14 +115,14 @@ const Dashboard = ({ code }) => {
   // TODO:(rgrant) use this to dynamically change the frequency of polling
   const [isPlaying, setIsPlaying] = useState(false);
   const [pollFrequency, setPollFrequency] = useState(playingPollFreq);
-  const [buttonText, setButtonText] = useState("___");
+  // const [buttonText, setButtonText] = useState("___");
 
   // TODO:(rgrant) background color thingy
   const [complimentaryAlbumColor, setComplimentaryAlbumColor] =
     useState("#000025ff");
 
   // TODO:(rgrant) use this to not always poll album info, have a use-effect hook that watches 'track-title' or something like that
-  const [currAlbum, setCurrAlbum] = useState();
+  // const [currAlbum, setCurrAlbum] = useState();
 
   const baseState = {
     track_title: "track_title",
@@ -316,6 +316,8 @@ const Dashboard = ({ code }) => {
         });
       }
     });
+    // TODO: fix this proper - remove this line to see full error
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currTrackID]);
 
   useEffect(() => {
@@ -366,6 +368,8 @@ const Dashboard = ({ code }) => {
       );
     }, pollFrequency);
     return () => clearInterval(interval);
+    // TODO: fix this proper
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accessToken, pollFrequency]);
 
   return (
