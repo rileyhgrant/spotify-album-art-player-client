@@ -1,20 +1,11 @@
-// import logo from "./logo.svg";
-
-// import * as dotenv from 'dotenv'
+import React, { useState } from "react";
 
 import "./App.css";
 
-import React, { useState } from "react";
-
 import Login from "./components/Login/Login";
-import Dashboard from "./components/Dashboard/Dashboard"
+import Dashboard from "./components/Dashboard/Dashboard";
 
-// dotenv.config()
-
-
-// 
 function App() {
-
   // eslint-disable-next-line no-unused-vars
   const [code, setCode] = useState(
     new URLSearchParams(window.location.search).get("code")

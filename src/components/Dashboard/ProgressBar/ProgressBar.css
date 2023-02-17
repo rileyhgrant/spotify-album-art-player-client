@@ -1,12 +1,7 @@
 .base-bar {
-    /* margin-top: -10px; */
-    /* padding-top: 1rem; */
-    /* margin-top: 0.75rem; */
     height: 0.2rem;
-    /* width: 100%; */
     min-width: 40vw;
     width: 100%;
-    /* background-color: "#e0e0de"; */
     background-color: #202020;
     border-radius: 1rem;;
     margin: 50;
@@ -25,7 +20,6 @@
 
   .label {
     height: 0.1rem;
-    /* padding: 5px; */
     color: white;
     font-weight: bold;
   }

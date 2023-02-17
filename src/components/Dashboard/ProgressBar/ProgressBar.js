@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./ProgressBar.css";
 
 const ProgressBar = ({ percentDone }) => {
-  
     const [transitionTiming, setTransitionTiming] = useState("1")
-    // yeh
   useEffect(() => {
-    // TODO:(rgrant) there may be a less rudimentary way to do this
+    // TODO: (rgrant) there may be a less rudimentary way to do this. Also, currently
+    //   if the user skips ahead on spotify, it will smooth scroll all the way to there.
+    //   Spotify seems to nix the idea of smooth bar, it just inches up in digital
+    //   increments. To think on.
     if (percentDone > 97) {
         setTransitionTiming(0) 
     } else {
@@ -18,13 +19,10 @@ const ProgressBar = ({ percentDone }) => {
     //   : setPollFrequency(pausedPollFreq);
   }, [percentDone]);
 
-  //   const { percentDone } = props;
   return (
     <span className="progress-bar-container">
       <div className="base-bar">
         <div className="progress-bar" style={{ "width": `${percentDone}%`, "transitionDuration": `${transitionTiming}s` }}>
-          {/* <span className="label">{`${percentDone}%`}</span> */}
-          {/* <span className="label">{`${transitionTiming}s`}</span> */}
         </div>
       </div>
     </span>

@@ -32,12 +32,10 @@ const grabArtists = (artistsData) => {
 };
 
 const Dashboard = ({ code }) => {
-  //   const [displayName, setDisplayName] = useState();
   const playingPollFreq = 1000;
   const pausedPollFreq = 3000;
-  // const playSvgPoly = <polygon points="5 3 19 12 5 21 5 3"></polygon>
-  // const pauseSVGPoly = <rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>}
 
+  // TODO: (rgrant) - break these SVGs into their own central directory?
   const playSVG = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -115,9 +113,8 @@ const Dashboard = ({ code }) => {
   // TODO:(rgrant) use this to dynamically change the frequency of polling
   const [isPlaying, setIsPlaying] = useState(false);
   const [pollFrequency, setPollFrequency] = useState(playingPollFreq);
-  // const [buttonText, setButtonText] = useState("___");
 
-  // TODO:(rgrant) background color thingy
+  // TODO:(rgrant) background color picker
   const [complimentaryAlbumColor, setComplimentaryAlbumColor] =
     useState("#000025ff");
 
@@ -130,7 +127,7 @@ const Dashboard = ({ code }) => {
     album: "album_name",
     album_year: 1337,
     art_url: "https://picsum.photos/640",
-    // playlist or album
+    // 'playing_from' is one of:  [playlist, album, etc]
     playing_from: "",
     is_playing: false,
     // TODO:(rgrant) get this with another call. What you can do is make this only go if something else changes
@@ -152,10 +149,10 @@ const Dashboard = ({ code }) => {
         () => {
           setIsPlaying(false);
           setPollFrequency(pausedPollFreq);
-          // setButtonText("Play");
           setButtonSvg(playSVG);
         },
         function (err) {
+          // TODO: remove me later
           console.log(`Something went wrong in pause/play: ${err}`);
         }
       );
@@ -165,10 +162,10 @@ const Dashboard = ({ code }) => {
         () => {
           setIsPlaying(true);
           setPollFrequency(playingPollFreq);
-          // setButtonText("Pause");
           setButtonSvg(pauseSVG);
         },
         function (err) {
+          // TODO: remove me later
           console.log(`Something went wrong in pause/play: ${err}`);
         }
       );
@@ -266,9 +263,7 @@ const Dashboard = ({ code }) => {
 
     // stuff for calculating top-left info
     spotifyApi.getMyCurrentPlayingTrack().then(function (data) {
-      // let leftInfo = "yeh";
-      // let left
-      // TODO:(rgrant) HERE if there is no context, disable the previous button?
+      // TODO:(rgrant) HERE if there is no context, disable the 'previous track' button?
       const playing_from = data.body.hasOwnProperty("context")
         ? data.body.context.type
         : null;
