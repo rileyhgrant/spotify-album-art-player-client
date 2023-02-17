@@ -14,7 +14,7 @@ export default function useAuth(code) {
       })
       .then((res) => {
         setAccessToken(res.data.accessToken);
-        window.history.pushState({}, null, "/");
+        window.history.pushState({}, null, "/spotify-album-art-player-client/");
       })
       .catch((err) => {
         console.log("caught error in this branch!");
